@@ -67,7 +67,7 @@ onMounted(async () => {
     <header id="header" class="bg-dark-50 text-white h-10 select-none">
       <LoadingOutlined v-if="loadding" class="pl-3 cursor-pointer" />
       <span class="text-size-5 pl-5">chatGPT</span>
-      <span <a href="https://ka.accc.pro" target="_blank">独享账号购买</a></span>
+      <span <a href="https://ka.accc.pro" target="_blank">购买账号</a></span>
       <a-tooltip>
         <template #title>清除聊天记录</template>
         <a-popconfirm title="确定清除本地所有聊天记录吗?" ok-text="是的" cancel-text="再想想" @confirm="clearMessages">
