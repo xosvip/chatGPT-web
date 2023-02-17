@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: xosvip/chatccc:tagname
+      - uses: actions/checkout@v2
         name: Check out code
 
       - uses: ilteoood/docker_buildx@master
@@ -14,7 +14,7 @@ jobs:
         with:
           publish: true
           dockerFile: Dockerfile
-          imageName: miclon/chatgpt
+          imageName: xosvip/chatccc
           tag: latest
           platform: linux/amd64,linux/arm64
           dockerUser: ${{ secrets.DOCKER_USERNAME }}
