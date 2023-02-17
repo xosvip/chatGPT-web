@@ -14,8 +14,8 @@ const message = ref('')
 const api_key = useStorage('api_key', '')
 const messages = useStorage('messages', [
   {
-    username: "chatGPT",
-    msg: "Hello, I'm chatGPT",
+    username: "ChatGPT",
+    msg: "Hello, I'm ChatGPT",
     time: dayjs().format('HH:mm'),
     type: 0,
   },
@@ -26,7 +26,7 @@ const sendMessage = async () => {
   const text = message.value
   message.value = ""
   messages.value.push({
-    username: "user",
+    username: "User",
     msg: text,
     time: dayjs().format('HH:mm'),
     type: 1,
@@ -35,7 +35,7 @@ const sendMessage = async () => {
   console.log(data)
   const replyMessage = data?.choices ? data.choices[0].text : data?.error?.message
   messages.value.push({
-    username: "chatGPT",
+    username: "ChatGPT",
     msg: replyMessage,
     time: dayjs().format('HH:mm'),
     type: 0,
@@ -66,7 +66,7 @@ onMounted(async () => {
   <div id="layout">
     <header id="header" class="bg-dark-50 text-white h-10 select-none">
       <LoadingOutlined v-if="loadding" class="pl-3 cursor-pointer" />
-      <span class="text-size-5 pl-5">chatGPT</span>
+      <span class="text-size-5 pl-5">ChatGPT</span>
       <span <a href="https://ka.accc.pro" target="_blank">购买账号</a></span>
       <a-tooltip>
         <template #title>清除聊天记录</template>
